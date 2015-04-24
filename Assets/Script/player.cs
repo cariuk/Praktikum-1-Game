@@ -23,17 +23,22 @@ public class player : MonoBehaviour {
 			GetComponent<Rigidbody>().AddForce(Vector3.up*speed);
 		}
 
+
 		var horizontal = Input.GetAxis("Horizontal");
 
 		if (horizontal > 0) {
 			sprite.sprite = Front;
 			animator.enabled=true;
 			animator.SetInteger ("Direction", 0);
+			
+			//Geser Ke Kanan
 			transform.position += (Vector3.right/20);
 		} else if (horizontal < 0) {
 			sprite.sprite = Back;
 			animator.enabled=true;
 			animator.SetInteger ("Direction", 1);
+			
+			//Geser Ke Kiri
 			transform.position += (Vector3.left/20);
 		} else {
 			animator.enabled=false;
